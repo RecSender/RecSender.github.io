@@ -9,3 +9,23 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
+
+document.getElementById('googleLogin')?.addEventListener('click', () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+            // Redirect to dashboard
+            window.location.href = 'dashboard.html';
+        })
+        .catch((error) => {
+            console.error(error);
+            document.getElementById('loginStatus').textContent = 
+                `Login failed: ${error.message}`;
+        });
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (!user && !window.location.pathname.includes('index.html')) {
+        window.location.href = 'index.html';
+    }
+});

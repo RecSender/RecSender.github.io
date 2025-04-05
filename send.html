@@ -1,1 +1,55 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecSend - Send Letters</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav>
+        <h1>RecSend</h1>
+        <a href="dashboard.html">Back to Dashboard</a>
+    </nav>
+    <div class="send-container">
+        <h2>Send Recommendation Letters</h2>
+        
+        <div class="form-section">
+            <h3>Recipient Information</h3>
+            <div class="form-group">
+                <label for="recipientName">Organization/Recipient Name</label>
+                <input type="text" id="recipientName" placeholder="Stanford University">
+            </div>
+            <div class="form-group">
+                <label for="recipientEmail">Recipient Email</label>
+                <input type="email" id="recipientEmail" placeholder="admissions@university.edu">
+            </div>
+        </div>
+
+        <div class="letters-selection">
+            <h3>Select Letters to Send</h3>
+            <div id="letterSelection" class="letters-list">
+                <div class="loader">Loading your letters...</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="customMessage">Custom Message (Optional)</label>
+            <textarea id="customMessage" rows="4" placeholder="Dear Admissions Committee..."></textarea>
+        </div>
+
+        <button id="sendLetters" class="primary-btn">Send Letters</button>
+        <div id="sendStatus"></div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <!-- Your scripts -->
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/send.js"></script>
+</body>
+</html>
