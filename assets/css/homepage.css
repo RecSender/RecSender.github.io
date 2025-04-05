@@ -21,10 +21,7 @@
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+    font-family: var(--font-family);
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
   }
@@ -41,7 +38,7 @@
   }
   
   .logo {
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
   }

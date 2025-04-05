@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecSend - Dashboard</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecSend | Dashboard</title>
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
 </head>
 <body>
-    <nav>
-        <h1>RecSend</h1>
-        <button id="logout">Logout</button>
-    </nav>
-    <div class="dashboard">
-        <a href="request.html" class="card">
-            <h3>Request Letters</h3>
-            <p>Ask recommenders to submit letters</p>
-        </a>
-        <a href="send.html" class="card">
-            <h3>Send Letters</h3>
-            <p>Submit letters to organizations</p>
-        </a>
-        <div class="card user-info">
-            <h3>Your Account</h3>
-            <div id="userDetails"></div>
-        </div>
-    </div>
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>Welcome, <span id="userName">Student</span></h1>
+      <p>Your central hub for managing recommendation letters.</p>
+    </header>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    
-    <!-- Your scripts -->
-    <script src="assets/js/auth.js"></script>
-    <script>
-        // Display user info
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                document.getElementById('userDetails').innerHTML = `
-                    <p><strong>Name:</strong> ${user.displayName || 'Not set'}</p>
-                    <p><strong>Email:</strong> ${user.email}</p>
-                `;
-            }
-        });
+    <main class="dashboard-main">
+      <section class="card" id="recommenders-section">
+        <h2>My Recommenders</h2>
+        <form id="recommenderForm">
+          <input type="text" id="recName" placeholder="Name" required />
+          <input type="text" id="recPosition" placeholder="Position" required />
+          <input type="email" id="recEmail" placeholder="Email" required />
+          <button type="submit" class="btn">Request Letter</button>
+        </form>
+        <ul id="recommenderList"></ul>
+      </section>
 
-        // Logout
-        document.getElementById('logout').addEventListener('click', () => {
-            firebase.auth().signOut().then(() => {
-                window.location.href = 'index.html';
-            });
-        });
-    </script>
+      <section class="card" id="letters-progress">
+        <h2>Letters Overview</h2>
+        <p><strong>Total Requested:</strong> <span id="totalRequested">0</span></p>
+        <p><strong>Total Submitted:</strong> <span id="totalSubmitted">0</span></p>
+        <p><strongTotal Sent:</strong> <span id="totalSent">0</span></p>
+      </section>
+
+      <section class="card" id="send-letters">
+        <h2>Send Letters</h2>
+        <textarea id="recipientEmails" placeholder="Enter recipient emails, separated by comma and space..."></textarea>
+        <div id="recommenderCheckboxes"></div>
+        <button class="btn" onclick="sendLetters()">Send Selected Letters</button>
+      </section>
+    </main>
+
+    <footer>
+        <p>© 2025 RecSend. A platform developed by Dhruv Hegde. All rights reserved.</p>
+    </footer>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
 </body>
 </html>

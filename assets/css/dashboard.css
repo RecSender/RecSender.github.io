@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg: #f9fafa;
+  --text: #222;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --primary: #2f80ed;
+  --dark-bg: #1e1f24;
+  --dark-card: #2a2b30;
+  --dark-text: #f0f0f0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.dashboard-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.dashboard-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  transition: background 0.3s;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+form input {
+  padding: 0.6rem;
+  margin-right: 1rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 30%;
+}
+
+form input:focus {
+  outline: 2px solid var(--primary);
+}
+
+.btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #1b61d1;
+}
+
+#recommenderList {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+#recommenderList li {
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+  background: var(--secondary-bg, #f1f4f9);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.status.pending {
+  background: #ffebc1;
+  color: #8a6d1d;
+}
+
+.status.submitted {
+  background: #c8f7c5;
+  color: #2e7d32;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+#recommenderCheckboxes {
+  margin-bottom: 1rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.dark-mode .card {
+  background-color: var(--dark-card);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
