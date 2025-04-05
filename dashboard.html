@@ -14,16 +14,26 @@
     </header>
 
     <main class="dashboard-main">
-      <section class="card" id="recommenders-section">
-        <h2>My Recommenders</h2>
-        <form id="recommenderForm">
-          <input type="text" id="recName" placeholder="Name" required />
-          <input type="text" id="recPosition" placeholder="Position" required />
-          <input type="email" id="recEmail" placeholder="Email" required />
-          <button type="submit" class="btn">Request Letter</button>
+      <!-- Request Recommendation Letter Form -->
+      <div class="form-container">
+        <h2>Request Recommendation Letter</h2>
+        <form id="requestLetterForm">
+          <div>
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" required />
+          </div>
+          <div>
+            <label for="recommenderName">Recommender Name:</label>
+            <input type="text" id="recommenderName" required />
+          </div>
+          <div>
+            <label for="recommenderEmail">Recommender Email:</label>
+            <input type="email" id="recommenderEmail" required />
+          </div>
+          <button type="submit">Send Request</button>
         </form>
-        <ul id="recommenderList"></ul>
-      </section>
+      </div>
+
 
       <section class="card" id="letters-progress">
         <h2>Letters Overview</h2>

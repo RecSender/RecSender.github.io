@@ -82,3 +82,38 @@ function toggleDarkMode() {
 
 // Simulate user data
 document.getElementById("userName").innerText = "Alex Johnson"; // Simulated Google name
+
+// Function to handle the sending of the request
+async function requestRecommendationLetter(recommenderName, recommenderEmail, userName) {
+  const response = await fetch('http://localhost:4000/request-letter', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      recommenderName,
+      recommenderEmail,
+      userName
+    })
+  });
+
+  const data = await response.json();
+  if (response.status === 200) {
+    alert('Request email sent successfully!');
+  } else {
+    alert('Failed to send request email.');
+  }
+}
+
+// Attach the function to the form submission
+document.getElementById('requestLetterForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent form from submitting the traditional way
+
+  // Get the values from the form inputs
+  const userName = document.getElementById('userName').value;
+  const recommenderName = document.getElementById('recommenderName').value;
+  const recommenderEmail = document.getElementById('recommenderEmail').value;
+
+  // Call the function to send the request email
+  requestRecommendationLetter(recommenderName, recommenderEmail, userName);
+});
