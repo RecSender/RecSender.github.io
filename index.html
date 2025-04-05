@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecSend - Login</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecSend | Recommendation Letters Made Easy</title>
+  <link rel="stylesheet" href="assets/css/homepage.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
-        <h1>RecSend</h1>
-        <p>Automated recommendation letters</p>
-        <button id="googleLogin">Login with Google</button>
-        <p id="loginStatus"></p>
-    </div>
+  <div class="container">
+    <header>
+      <h1 class="logo">RecSend</h1>
+      <p class="tagline">Your Letters. Your Control. One Platform.</p>
+    </header>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    
-    <!-- Your auth script -->
-    <script src="assets/js/auth.js"></script>
+    <main>
+      <section class="description">
+        <h2>What is RecSend?</h2>
+        <p>
+          RecSend simplifies the process of managing and sending recommendation letters.
+          Request letters from your recommenders, store them safely, and send them to schools, scholarships,
+          jobs, and internships at your own pace, all from one unified dashboard.
+        </p>
+
+        <h2>Why RecSend?</h2>
+        <ul>
+          <li>No more chasing recommenders or managing attachments manually.</li>
+          <li>Secure cloud-based storage of all your recommendation letters.</li>
+          <li>No more waiting, that means submitting anytime, even for last-minute finds</li>
+          <li>Keep track of all your receipts and see all your submissions in one place.</li>
+          <li>One-click sending or uploading via Chrome extension.</li>
+        </ul>
+
+        <div class="cta-buttons">
+          <a href="/login.html" class="btn">Login with Google</a>
+          <a href="/signup.html" class="btn secondary">Sign Up</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 RecSend. A platform developed by Dhruv Hegde. All rights reserved.</p>
+    </footer>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+/* Base variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #2f80ed;
+    --secondary-color: #f2f4f8;
+    --font-family: 'Segoe UI', sans-serif;
+  
+    --dark-bg: #1e1f24;
+    --dark-secondary: #2b2c30;
+    --dark-text: #e0e0e0;
+  }
+  
+  /* Reset + Base styling */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .logo {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.25rem;
+    color: #666;
+  }
+  
+  .description h2 {
+    margin-top: 2rem;
+    font-size: 1.75rem;
+  }
+  
+  .description p,
+  .description ul {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .description ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .cta-buttons {
+    margin-top: 2rem;
+  }
+  
+  .btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-right: 1rem;
+    display: inline-block;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #1b61d1;
+  }
+  
+  .btn.secondary {
+    background-color: #e2e6ec;
+    color: #333;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 4rem;
+    color: #999;
+    font-size: 0.875rem;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  }
+  
+  body.dark-mode .logo {
+    color: var(--primary-color);
+  }
+  
+  body.dark-mode .btn.secondary {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+  }
+  
+  body.dark-mode .description p,
+  body.dark-mode .description ul,
+  body.dark-mode footer {
+    color: var(--dark-text);
+  }
+  
+  /* Dark mode toggle */
+  .dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
